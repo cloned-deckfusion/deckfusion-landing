@@ -4,7 +4,7 @@
 
 from pathlib import Path
 
-from decouple import config  # type: ignore
+from decouple import config
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -15,7 +15,7 @@ from decouple import config  # type: ignore
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Set secret key
-SECRET_KEY = config("BACKEND_SECRET_KEY", default="") or "secret-key"
+SECRET_KEY = config("BACKEND_SECRET_KEY", cast=str, default="") or "secret-key"
 
 # Define environment constants
 LOCAL = "local"
@@ -36,7 +36,7 @@ ENABLE_DJANGO_ADMIN = config("BACKEND_ENABLE_DJANGO_ADMIN", cast=bool, default=T
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Define allowed hosts
-ALLOWED_HOSTS = config("BACKEND_ALLOWED_HOSTS", default="").split(",")
+ALLOWED_HOSTS = str(config("BACKEND_ALLOWED_HOSTS", cast=str, default="")).split(",")
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ SERVER
@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Channels
     "channels",
+    # Project
+    "pages",
 ]
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -149,10 +151,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Define static URL
-STATIC_URL = config("BACKEND_STATIC_URL", default="") or "/static/"
+STATIC_URL = config("BACKEND_STATIC_URL", cast=str, default="") or "/static/"
 
 # Define static root
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Define static files directories
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Define static files storage
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

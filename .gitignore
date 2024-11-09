@@ -1,2 +1,22 @@
 # Project
 staticfiles/
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Environment
+.env
+
+# Node.js
+node_modules/
+
+# Tailwind CSS
+static/css/main.css
+
+# Logs
+*.log
+
+# MacOS
+.DS_Store

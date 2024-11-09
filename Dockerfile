@@ -15,35 +15,38 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /app
 
-# Install dependencies
+# Install dependencies and Node.js for Tailwind CSS in one step
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    libpq-dev
+    libpq-dev \
+    curl \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
-# Clean up APT when done
-RUN rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man && apt-get clean
-
-# Copy the requirements file into the container
-COPY requirements.txt /app/
-
-# Install Python dependencies
+# Copy and install Python dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Delete requirements.txt
-RUN rm -f requirements.txt
+# Copy npm package files and install npm dependencies
+COPY package.json package-lock.json ./
+RUN npm install
 
-# Copy the project files into the container
-COPY . /app/
+# Copy the rest of the project files
+COPY . .
 
-# Collect static files
+# Build Tailwind CSS
+RUN npm run build:css
+
+# Collect Django static files
 RUN python manage.py collectstatic --noinput
 
 # Add and run as non-root user
-RUN adduser --disabled-password --gecos '' appuser
-RUN chown -R appuser:appuser /app
+RUN adduser --disabled-password --gecos '' appuser && chown -R appuser:appuser /app
 
-# Copy entrypoint scripts
+# Copy entrypoint scripts and make it executable
 COPY scripts/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # Set entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
