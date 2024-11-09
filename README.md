@@ -1,2 +1,2 @@
-# landing-backend
-A development server for the DeckFusion landing page
+# Landing Backend
+A backend server for the DeckFusion landing page
