@@ -4,7 +4,7 @@
   "description": "A backend server for the DeckFusion landing page",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/main.css --watch",
+    "build:css": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/main.css",
     "test": "echo \"No test specified\" && exit 1"
   },
   "keywords": [],

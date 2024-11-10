@@ -14,4 +14,4 @@ class HomeView(TemplateView):
     """Home View"""
 
     # Define template name
-    template_name = "pages/home.html"
+    template_name = "pages/index.html"
