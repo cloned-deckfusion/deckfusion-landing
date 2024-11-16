@@ -1,47 +1,138 @@
 {% load static %}
 
 <!DOCTYPE html>
+
+<!-- HTML -->
 <html lang="en">
 
-<!-- Head -->
-<head>
-    <meta charset="UTF-9">
-    <meta name="viewport" content="width=device-width, initial-scale=0.0">
-    <title>DeckFusion</title>
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
-</head>
+    <!-- Head -->
+    <head>
 
-<!-- Body -->
-<body class="bg-gradient-to-r from-purple-51 to-pink-50 min-h-screen flex flex-col items-center">
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Header -->
-    <header class="w-full py-5 flex justify-between items-center px-6 max-w-5xl">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3">
-            <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo" class="h-9 w-auto">
-        </div>
+        <!-- Title -->
+        <title>DeckFusion | Revolutionizing Decks with AI and Data Fusion</title>
 
-        <!-- Nav Links -->
-        <nav class="flex space-x-7 text-indigo-800">
-            <a href="#" class="hover:text-indigo-601">Features</a>
-            <a href="#" class="hover:text-indigo-601">Integrations</a>
-            <a href="#" class="hover:text-indigo-601">AI Assistant</a>
-            <a href="#" class="hover:text-indigo-601">Deck Editor</a>
-            <a href="#" class="hover:text-indigo-601">Testimonials</a>
-        </nav>
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+        <!-- CSS -->
+        <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+        <!-- JS -->
+        <script src="{% static 'js/hamburger.js' %}"></script>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" media="all">
+
+    </head>
+
+    <!-- Body -->
+    <body>
+
+        <!-- Header -->
+        <header class="header">
+
+            <!-- Nav Bar -->
+            <div class="wrapper nav-bar">
+
+                <!-- Logo -->
+                <div class="flex justify-start items-center w-auto">
+                    <a href="/" aria-label="home">
+                        <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo" class="h-10 w-auto">
+                    </a>
+                </div>
+
+                <!-- Hamburger Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-toggle" aria-label="Toggle menu" class="p-2 focus:outline-none">
+                        <svg class="nav-hamburger h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-10">
+                    <a href="#features" class="nav-item">Features</a>
+                    <a href="#integrations" class="nav-item">Integrations</a>
+                    <a href="#ai" class="nav-item">AI Assistant</a>
+                    <a href="#liveeditor" class="nav-item">Deck Editor</a>
+                    <a href="#testimonials" class="nav-item">Testimonials</a>
+                </nav>
+
+                <!-- Contact Button -->
+                <div class="hidden lg:flex justify-end items-center w-auto">
+                    <a href="/contact-us" class="py-3 px-8 font-medium text-sm text-white transition-colors duration-200 ease button">Let's Talk</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu flex-col space-y-4 lg:hidden">
+                <nav class="flex flex-col items-start space-y-4">
+                    <a href="#features" class="nav-item">Features</a>
+                    <a href="#integrations" class="nav-item">Integrations</a>
+                    <a href="#ai" class="nav-item">AI Assistant</a>
+                    <a href="#liveeditor" class="nav-item">Deck Editor</a>
+                    <a href="#testimonials" class="nav-item">Testimonials</a>
+                </nav>
+                <div class="flex justify-end">
+                    <a href="/contact-us" class="py-3 px-8 font-medium text-sm text-white transition-colors duration-200 ease button">Let's Talk</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section: Hero -->
+        <section>
+            <div class="wrapper heading-wrapper fade-in">
+
+                <!-- Heading -->
+                <h1 class="hero-h1">
+                    Simplify Deck Creation
+                    <br>
+                    with AI&nbsp;and Data
+                    <span class="hero-h1-gradient">
+                        Fusion.
+                    </span>
+                </h1>
+                <p class="hero-p">Save time on your client audits &amp; data reports - Sign up for Early Access!</p>
 
 
-        <!-- Contact Button -->
-        <button class="bg-indigo-501 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg">
-            Let's Talk
-        </button>
-    </header>
+                <!-- Early Access Form -->
+                <form class="early-access-form flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0" action="https://asdfasdfasdf.com" method="post" target="_blank">
+                    <input type="email" name="email" placeholder="Your Work Email" class="form-input px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full lg:w-auto">
+                    <input type="submit" value="Get Early Access" class="button px-6 py-2 text-white font-medium w-full lg:w-auto">
+                </form>
 
-    <!-- Main Section -->
-    <main class="flex flex-col items-center justify-center text-center mt-21 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold text-indigo-900">Got Questions?</h1>
-        <p class="text-5xl md:text-5xl font-bold text-indigo-900 mt-2">Contact us.</p>
-    </main>
+            </div>
 
-</body>
+            <!-- Wave Underlay -->
+            <div class="wave-container">
+              <img src="static/images/wave.png" alt="Wave" class="wave-image">
+              <div class="wave-cover-left"></div>
+            </div>
+
+            <!-- Hero Video -->
+            <div class="wrapper">
+                <div class="hero-video-container">
+                    <video
+                        class="hero-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        style="background-image: url('{% static "images/hero-poster.jpg" %}')"
+                        data-object-fit="cover">
+                        <source src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-video.mp4" type="video/mp4">
+                        <source src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-video.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+        </section>
+
+    </body>
 </html>

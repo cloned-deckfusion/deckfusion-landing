@@ -1,9 +1,11 @@
-NAME = backend
+all: rebuild
 
-all: $(NAME)
+build:
+	npm run build:css
 
-$(NAME):
+rebuild:
 	poetry export --without-hashes --format=requirements.txt > requirements.txt
+	npm run build:css
 
 clean:
 	rm -f requirements.txt
@@ -12,4 +14,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all build rebuild clean fclean re

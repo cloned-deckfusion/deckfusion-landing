@@ -57,8 +57,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # Define installed apps
 INSTALLED_APPS = [
-    # Daphne
-    "daphne",
     # Django Contrib
     "django.contrib.admin",
     "django.contrib.auth",
@@ -105,6 +103,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "debug": DEBUG,
         },
     },
 ]
