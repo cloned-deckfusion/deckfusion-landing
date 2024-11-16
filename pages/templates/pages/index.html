@@ -22,6 +22,8 @@
         <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
         <!-- JS -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <script src="{% static 'js/confetti.js' %}"></script>
         <script src="{% static 'js/hamburger.js' %}"></script>
 
         <!-- Fonts -->
@@ -36,57 +38,59 @@
         <header class="header">
 
             <!-- Nav Bar -->
-            <div class="wrapper nav-bar">
+            <div class="nav-bar centered">
 
                 <!-- Logo -->
-                <div class="flex justify-start items-center w-auto">
+                <div class="logo">
                     <a href="/" aria-label="home">
-                        <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo" class="h-10 w-auto">
+                        <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo">
                     </a>
                 </div>
 
                 <!-- Hamburger Button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-toggle" aria-label="Toggle menu" class="p-2 focus:outline-none">
-                        <svg class="nav-hamburger h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="nav-hamburger">
+                    <button id="mobile-menu-toggle" aria-label="Toggle menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
                 </div>
 
                 <!-- Nav Links -->
-                <nav class="hidden lg:flex items-center space-x-10">
-                    <a href="#features" class="nav-item">Features</a>
-                    <a href="#integrations" class="nav-item">Integrations</a>
-                    <a href="#ai" class="nav-item">AI Assistant</a>
-                    <a href="#liveeditor" class="nav-item">Deck Editor</a>
-                    <a href="#testimonials" class="nav-item">Testimonials</a>
+                <nav class="nav-items">
+                    <a href="https://www.deckfusion.com/#features" class="nav-item">Features</a>
+                    <a href="https://www.deckfusion.com/#integrations" class="nav-item">Integrations</a>
+                    <a href="https://www.deckfusion.com/#ai" class="nav-item">AI Assistant</a>
+                    <a href="https://www.deckfusion.com/#liveeditor" class="nav-item">Deck Editor</a>
+                    <a href="https://www.deckfusion.com/#testimonials" class="nav-item">Testimonials</a>
                 </nav>
 
                 <!-- Contact Button -->
-                <div class="hidden lg:flex justify-end items-center w-auto">
-                    <a href="/contact-us" class="py-3 px-8 font-medium text-sm text-white transition-colors duration-200 ease button">Let's Talk</a>
+                <div class="nav-item-contact">
+                    <a href="/contact-us" class="button">Let's Talk</a>
                 </div>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu flex-col space-y-4 lg:hidden">
-                <nav class="flex flex-col items-start space-y-4">
+            <div id="mobile-menu" class="mobile-menu">
+                <nav class="nav-items-mobile">
                     <a href="#features" class="nav-item">Features</a>
                     <a href="#integrations" class="nav-item">Integrations</a>
                     <a href="#ai" class="nav-item">AI Assistant</a>
                     <a href="#liveeditor" class="nav-item">Deck Editor</a>
                     <a href="#testimonials" class="nav-item">Testimonials</a>
                 </nav>
-                <div class="flex justify-end">
-                    <a href="/contact-us" class="py-3 px-8 font-medium text-sm text-white transition-colors duration-200 ease button">Let's Talk</a>
+                <div class="nav-item-contact-mobile">
+                    <a href="/contact-us" class="button">Let's Talk</a>
                 </div>
             </div>
         </header>
 
         <!-- Section: Hero -->
         <section>
-            <div class="wrapper heading-wrapper fade-in">
+
+            <!-- Section Chunk -->
+            <div class="section-chunk centered fade-in">
 
                 <!-- Heading -->
                 <h1 class="hero-h1">
@@ -101,24 +105,25 @@
 
 
                 <!-- Early Access Form -->
-                <form class="early-access-form flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0" action="https://asdfasdfasdf.com" method="post" target="_blank">
+                <form class="early-access-form">
                     <input type="email" name="email" placeholder="Your Work Email" class="form-input px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full lg:w-auto">
                     <input type="submit" value="Get Early Access" class="button px-6 py-2 text-white font-medium w-full lg:w-auto">
                 </form>
-
             </div>
 
             <!-- Wave Underlay -->
             <div class="wave-container">
-              <img src="static/images/wave.png" alt="Wave" class="wave-image">
+              <img src="{% static 'images/wave.png' %}" alt="Wave" class="wave-image">
               <div class="wave-cover-left"></div>
             </div>
 
-            <!-- Hero Video -->
-            <div class="wrapper">
-                <div class="hero-video-container">
+            <!-- Section Chunk -->
+            <div class="section-chunk centered">
+
+                <!-- Hero Video -->
+                <div class="hero-video-container centered">
                     <video
-                        class="hero-video"
+                        class="hero-video centered"
                         autoplay
                         loop
                         muted
@@ -130,9 +135,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-            </div>
 
+                <!-- Hero Logos -->
+                <div class="hero-logos centered">
+                    <img src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-logo-microsoft.svg" loading="lazy" alt="" class="hero-logo">
+                    <img src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-logo-hubspot.svg" loading="lazy" alt="" class="hero-logo">
+                    <img src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-logo-google.svg" loading="lazy" alt="" class="hero-logo">
+                    <img src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-logo-facebook.svg" loading="lazy" alt="" class="hero-logo">
+                    <img src="https://pub-5fc5622dfb6942aa92f5ad00d45f7aef.r2.dev/hero-logo-ppt.svg" loading="lazy" alt="" class="hero-logo">
+                </div>
+            </div>
         </section>
 
+        <!-- Section: Footer -->
+        <section>
+            <div class="footer">
+            </div>
+        </section>
     </body>
 </html>
