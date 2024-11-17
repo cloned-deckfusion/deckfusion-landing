@@ -1,5 +1,5 @@
 # Set Python runtime
-FROM python:3.11.5-slim-bookworm AS backend_base
+FROM python:3.11.5-slim-bookworm AS landing_base
 
 # Set maintainer
 LABEL maintainer="Sean O'Leary <seamicole@gmail.com>"
