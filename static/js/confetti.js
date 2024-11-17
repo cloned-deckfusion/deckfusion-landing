@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.early-access-form');
     const message = document.createElement('p');
+    const waveCoverLeft = document.querySelector('.wave-cover-left');
+
     message.textContent = "Hang tight! We'll be in touch soon.";
     message.className = 'early-access-message hero-gradient hidden';
 
@@ -9,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+
+            if (waveCoverLeft) {
+                waveCoverLeft.classList.remove('wave-slide-in');
+                void waveCoverLeft.offsetWidth;
+                waveCoverLeft.classList.add('wave-slide-in');
+            }
 
             confetti({
                 particleCount: 100,

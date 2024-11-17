@@ -34,7 +34,7 @@
   margin: 0 auto;
   text-align: center;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   @media (min-width: 2000px) {
     margin-bottom: 85px;
@@ -206,7 +206,6 @@
 
     nav {
       padding: 0 20px;
-      margin-bottom: 10px;
     }
 }
 
@@ -364,6 +363,9 @@
   height: 100%;
   background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
   transform: translate3d(100%, 0, 0);
+}
+
+.wave-slide-in {
   animation: slideIn 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
