@@ -27,7 +27,7 @@ if settings.ENABLE_DJANGO_ADMIN:
     environment_title = settings.ENVIRONMENT.title()
 
     # Define title from environment reminder
-    TITLE = f"Dalpha {environment_title}"
+    TITLE = f"DeckFusion {environment_title}"
 
     # Set title for Django Admin
     admin.site.site_title = TITLE
