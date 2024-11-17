@@ -1,0 +1,53 @@
+{% load static %}
+
+<!-- Header -->
+<header class="header">
+
+    <!-- Nav Bar -->
+    <div class="nav-bar centered">
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/" aria-label="home">
+                <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo">
+            </a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger">
+            <button id="mobile-menu-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Nav Links -->
+        <nav class="nav-items">
+            <a href="https://www.deckfusion.com/#features" class="nav-item">Features</a>
+            <a href="https://www.deckfusion.com/#integrations" class="nav-item">Integrations</a>
+            <a href="https://www.deckfusion.com/#ai" class="nav-item">AI Assistant</a>
+            <a href="https://www.deckfusion.com/#liveeditor" class="nav-item">Deck Editor</a>
+            <a href="https://www.deckfusion.com/#testimonials" class="nav-item">Testimonials</a>
+        </nav>
+
+        <!-- Contact Button -->
+        <div class="nav-item-contact">
+            <a href="/contact-us" class="button">Let's Talk</a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <nav class="nav-items-mobile">
+            <a href="#features" class="nav-item">Features</a>
+            <a href="#integrations" class="nav-item">Integrations</a>
+            <a href="#ai" class="nav-item">AI Assistant</a>
+            <a href="#liveeditor" class="nav-item">Deck Editor</a>
+            <a href="#testimonials" class="nav-item">Testimonials</a>
+        </nav>
+        <div class="nav-item-contact-mobile">
+            <a href="/contact-us" class="button">Let's Talk</a>
+        </div>
+    </div>
+</header>

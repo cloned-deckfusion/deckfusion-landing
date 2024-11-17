@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+            Array.from(form.elements).forEach((element) => {
+                element.disabled = true;
+            });
 
             if (waveCoverLeft) {
                 waveCoverLeft.classList.remove('wave-slide-in');
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.classList.add('hidden');
                 message.classList.remove('hidden');
                 message.classList.add('fade-in');
-            }, 101);
+            }, 100);
         });
     }
 });
