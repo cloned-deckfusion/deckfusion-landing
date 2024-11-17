@@ -148,9 +148,31 @@
         </section>
 
         <!-- Section: Footer -->
-        <section>
-            <div class="footer">
+        <footer class="footer centered">
+
+            <!-- Logo -->
+            <div class="footer-logo logo">
+                <img src="{% static 'images/logo-main.svg' %}" alt="DeckFusion Logo">
+                <a href="mailto:admin@deckfusion.com" class="nav-item">admin@deckfusion.com</a>
             </div>
-        </section>
+
+            <!-- Sitemap -->
+            <div class="footer-sitemap">
+                <a class="nav-item" href="https://www.deckfusion.com/reference/privacy-policy">Privacy Policy</a>
+                <a class="nav-item" href="https://www.deckfusion.com/reference/terms-of-service">Terms &amp;&nbsp;Conditions</a>
+                <a class="nav-item" href="/contact-us">Contact Us</a>
+            </div>
+
+            <!-- Socials -->
+            <div class="footer-socials">
+                <p>Connect with Us</p>
+                <div class="footer-socials-icons">
+                    <a href="http://facebook.com/deckfusion" target="_blank" aria-label="Facebook"><img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook"></a>
+                    <a href="http://x.com/deckfusion" target="_blank" aria-label="Twitter"><img src="{% static 'images/icon-x.svg' %}" alt="X"></a>
+                    <a href="https://www.linkedin.com/company/deckfusion/" target="_blank" aria-label="LinkedIn"><img src="{% static 'images/icon-linkedin.svg' %}" alt="LinkedIn"></a>
+                    <a href="http://instagram.com/deckfusion" target="_blank" aria-label="Instagram"><img src="{% static 'images/icon-instagram.svg' %}" alt="Instagram"></a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
