@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.classList.add('hidden');
                 message.classList.remove('hidden');
                 message.classList.add('fade-in');
-            }, 500);
+            }, 101);
         });
     }
 });
