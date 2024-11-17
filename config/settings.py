@@ -15,7 +15,7 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Set secret key
-SECRET_KEY = config("BACKEND_SECRET_KEY", cast=str, default="") or "secret-key"
+SECRET_KEY = config("LANDING_SECRET_KEY", cast=str, default="") or "secret-key"
 
 # Define environment constants
 LOCAL = "local"
