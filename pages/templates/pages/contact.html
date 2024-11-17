@@ -1,0 +1,72 @@
+{% extends 'pages/partials/base_page.html' %}
+{% load static %}
+
+{% block title %}
+Contact Us - DeckFusion - AI and Data Fusion Deck Editor
+{% endblock %}
+
+{% block content %}
+<section>
+
+  <!-- Wave Underlay -->
+  <div class="wave-container">
+    <img src="{% static 'images/wave.png' %}" alt="Wave" class="wave-image wave-image-2">
+    <div class="wave-cover-left wave-slide-in"></div>
+  </div>
+
+  <!-- Section Chunk -->
+  <div class="section-chunk">
+    <!-- Heading -->
+    <h1 class="hero-h1 hero-h1-contact centered">
+      Got Questions?
+      <br />
+      Contact us.
+    </h1>
+  </div>
+
+  <!-- Form Container -->
+  <form class="contact-form">
+    <!-- First and Last Name -->
+    <div class="contact-form-row">
+      <input
+        type="text"
+        name="first_name"
+        placeholder="First Name"
+        class="input contact-form-input"
+        required
+      />
+      <input
+        type="text"
+        name="last_name"
+        placeholder="Last Name"
+        class="input contact-form-input"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      class="input contact-form-input"
+      required
+    />
+
+    <!-- Message -->
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      class="input contact-form-input"
+      rows="5"
+      required
+    ></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" class="button">
+      Send Message
+    </button>
+  </form>
+
+</section>
+{% endblock %}

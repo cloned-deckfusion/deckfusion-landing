@@ -8,7 +8,7 @@ from django.urls import path
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from pages.views import HomeView
+from pages.views import ContactView, HomeView
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -18,4 +18,5 @@ from pages.views import HomeView
 # Define URL patterns
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
+    path("contact-us", ContactView.as_view(), name="contact"),
 ]

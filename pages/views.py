@@ -15,3 +15,15 @@ class HomeView(TemplateView):
 
     # Define template name
     template_name = "pages/index.html"
+
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CONTACT VIEW
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+
+class ContactView(TemplateView):
+    """Contact View"""
+
+    # Define template name
+    template_name = "pages/contact.html"
