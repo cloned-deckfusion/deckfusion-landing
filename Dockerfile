@@ -59,4 +59,4 @@ USER appuser
 EXPOSE 8000
 
 # Run command
-CMD ["uvicorn", "config.asgi:application", "--host", "0.0.0.0", "--port", "${PORT:-8000}", "--reload"]
+CMD ["sh", "-c", "uvicorn config.asgi:application --host 0.0.0.0 --port ${PORT:-8000}"]
