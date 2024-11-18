@@ -21,6 +21,9 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
     <!-- JS -->
+    <script>
+        const backendBaseUrl = "{{ BACKEND_BASE_URL|escapejs }}";
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="{% static 'js/confetti.js' %}"></script>
     <script src="{% static 'js/hamburger.js' %}"></script>
@@ -39,6 +42,12 @@
         <!-- Content -->
         {% endblock %}
     </main>
+
+    <!-- Setting Container -->
+    <div
+        id="settings-container"
+        data-backend-base-url="{{ BACKEND_BASE_URL|escapejs }}">
+    </div>
 
     {% include 'pages/partials/base_footer.html' %}
 </body>

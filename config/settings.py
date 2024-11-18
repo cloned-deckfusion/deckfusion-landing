@@ -175,3 +175,12 @@ USE_TZ = False
 
 # Define whether to enable translations
 USE_I18N = True
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ BACKEND
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Set backend base URL
+BACKEND_BASE_URL = (
+    config("BACKEND_BASE_URL", cast=str, default="") or "http://localhost:8001"
+)
