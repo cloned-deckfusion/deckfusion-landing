@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             event.preventDefault();
 
+            if (waveCoverLeft) {
+                waveCoverLeft.classList.remove('wave-slide-in');
+                void waveCoverLeft.offsetWidth;
+                waveCoverLeft.classList.add('wave-slide-in');
+            }
+
             const emailInput = form.querySelector('input[name="email"]');
             const email = emailInput.value;
 
@@ -38,13 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (!response.ok) {
                     throw new Error('Failed to submit data');
-                }
-
-                // Success: Handle animation
-                if (waveCoverLeft) {
-                    waveCoverLeft.classList.remove('wave-slide-in');
-                    void waveCoverLeft.offsetWidth;
-                    waveCoverLeft.classList.add('wave-slide-in');
                 }
 
                 confetti({

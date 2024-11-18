@@ -25,48 +25,56 @@ Contact Us - DeckFusion - AI and Data Fusion Deck Editor
   </div>
 
   <!-- Form Container -->
-  <form class="contact-form">
-    <!-- First and Last Name -->
-    <div class="contact-form-row">
+  <div id="contact-form-container" class="contact-form-container">
+    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+      <!-- First and Last Name -->
+      <div class="contact-form-row">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="First Name"
+          class="input contact-form-input"
+          required
+        />
+        <input
+          type="text"
+          name="last_name"
+          placeholder="Last Name"
+          class="input contact-form-input"
+          required
+        />
+      </div>
+
+      <!-- Email -->
       <input
-        type="text"
-        name="first_name"
-        placeholder="First Name"
+        type="email"
+        name="email"
+        placeholder="Email"
         class="input contact-form-input"
         required
       />
-      <input
-        type="text"
-        name="last_name"
-        placeholder="Last Name"
+
+      <!-- Message -->
+      <textarea
+        name="message"
+        placeholder="Your Message"
         class="input contact-form-input"
+        rows="5"
         required
-      />
+      ></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="button">
+        Send Message
+      </button>
+    </form>
+
+    <!-- Submission Message -->
+    <div id="submission-message" class="contact-message hidden">
+      <h2 class="hero-gradient">Thank you for reaching out!</h2>
+      <p>We’ve received your message and will get back to you soon.</p>
     </div>
-
-    <!-- Email -->
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      class="input contact-form-input"
-      required
-    />
-
-    <!-- Message -->
-    <textarea
-      name="message"
-      placeholder="Your Message"
-      class="input contact-form-input"
-      rows="5"
-      required
-    ></textarea>
-
-    <!-- Submit Button -->
-    <button type="submit" class="button">
-      Send Message
-    </button>
-  </form>
-
+  </div>
 </section>
+<script src="{% static 'js/contact.js' %}"></script>
 {% endblock %}
